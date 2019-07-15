@@ -1,0 +1,27 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.757
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Data_WareHouse_Roupas_ETL_1", "Data_WareHouse_Roupas_ETL_1\Data_WareHouse_Roupas_ETL_1.sqlproj", "{0DDF184C-7D91-4919-BFC0-E55C9E5B8E19}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0DDF184C-7D91-4919-BFC0-E55C9E5B8E19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DDF184C-7D91-4919-BFC0-E55C9E5B8E19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DDF184C-7D91-4919-BFC0-E55C9E5B8E19}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0DDF184C-7D91-4919-BFC0-E55C9E5B8E19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DDF184C-7D91-4919-BFC0-E55C9E5B8E19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DDF184C-7D91-4919-BFC0-E55C9E5B8E19}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AD67393D-3F7C-49E2-93DA-2F633992D582}
+	EndGlobalSection
+EndGlobal
