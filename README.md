@@ -1,6 +1,6 @@
-# Data WareHouse Roupas - ETL Integration Services
+# Data WareHouse Roupas - ETL com Integration Services
 
-Criação de um modelo de dados de uma Data Warehouse com o uso de ETL com Integration Services.
+Criação de um modelo de dados de uma Data Warehouse com o usando ETL com Integration Services.
 
 Necessário estar instalado :
 
