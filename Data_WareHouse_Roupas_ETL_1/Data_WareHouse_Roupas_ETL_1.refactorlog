@@ -28,4 +28,46 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Id_Cliente" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="380eb19b-6cb8-479e-89a3-b2ca296640a8" ChangeDateTime="07/16/2019 03:06:32">
+    <Property Name="ElementName" Value="[dbo].[Dimensao_Categoria].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dimensao_Categoria]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Categoria" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f9425c72-a4fd-4436-adef-2d3f9213209f" ChangeDateTime="07/16/2019 03:06:47">
+    <Property Name="ElementName" Value="[dbo].[Dimensao_Categoria].[Cat]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dimensao_Categoria]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Desc_Categoria" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="24b94d97-7fa7-4e98-83b3-05f9751a18b2" ChangeDateTime="07/16/2019 03:07:48">
+    <Property Name="ElementName" Value="[dbo].[Dimensao_Marca].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dimensao_Marca]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Marca" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="47eecb88-3989-4905-96c0-cb03ebac93c2" ChangeDateTime="07/16/2019 03:09:39">
+    <Property Name="ElementName" Value="[dbo].[FK_Dimensao_Marca_ToTable]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Dimensao_Marca]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Dimensao_Marca_ToTable_Dimensao_Categoria]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="f78751dc-348d-4f08-bb94-e2736ff743c0" ChangeDateTime="07/16/2019 03:10:09">
+    <Property Name="ElementName" Value="[dbo].[FK_Dimensao_Marca_ToTable_Dimensao_Categoria]" />
+    <Property Name="ElementType" Value="SqlForeignKeyConstraint" />
+    <Property Name="ParentElementName" Value="[dbo].[Dimensao_Marca]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="[FK_Dimensao_Marca_Dimensao_Categoria]" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="901af14c-cec5-4aa0-b6b8-e42dac3e9aba" ChangeDateTime="07/16/2019 03:14:55">
+    <Property Name="ElementName" Value="[dbo].[Dimensao_Produto].[Id]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dimensao_Produto]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Produto" />
+  </Operation>
 </Operations>

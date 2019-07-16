@@ -66,5 +66,8 @@
   <ItemGroup>
     <Build Include="Tabelas\Dimensao_Fabrica.sql" />
     <Build Include="Tabelas\Dimensao_Cliente.sql" />
+    <Build Include="Tabelas\Dimensao_Categoria.sql" />
+    <Build Include="Tabelas\Dimensao_Marca.sql" />
+    <Build Include="Tabelas\Dimensao_Produto.sql" />
   </ItemGroup>
 </Project>
