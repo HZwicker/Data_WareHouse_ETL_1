@@ -69,5 +69,12 @@
     <Build Include="Tabelas\Dimensao_Categoria.sql" />
     <Build Include="Tabelas\Dimensao_Marca.sql" />
     <Build Include="Tabelas\Dimensao_Produto.sql" />
+    <Build Include="Tabelas\Dimensao_Organizacional.sql" />
+    <Build Include="Tabelas\Dimensao_Tempo.sql" />
+    <Build Include="Tabelas\Fato_01.sql" />
+    <Build Include="Tabelas\Fato_02.sql" />
+    <Build Include="Tabelas\Fato_03.sql" />
+    <Build Include="Tabelas\Fato_04.sql" />
+    <Build Include="Tabelas\Fato_05.sql" />
   </ItemGroup>
 </Project>
