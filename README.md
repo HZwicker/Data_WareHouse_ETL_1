@@ -1,6 +1,6 @@
 # Data WareHouse Roupas - ETL com Integration Services
 
-Criação de um modelo de dados de uma Data Warehouse (Tabela de Dimensões e Tabelas de Fato)  usando ETL com Integration Services.
+Criação de um modelo de dados de uma Data Warehouse (Tabelas de Dimensões e Tabelas de Fato)  usando ETL com Integration Services.
 
 Necessário estar instalado :
 
