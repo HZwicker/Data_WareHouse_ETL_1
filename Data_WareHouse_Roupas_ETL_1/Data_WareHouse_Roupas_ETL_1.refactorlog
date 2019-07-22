@@ -147,4 +147,18 @@
     <Property Name="ParentElementType" Value="SqlTable" />
     <Property Name="NewName" Value="Meta_Faturamento" />
   </Operation>
+  <Operation Name="Rename Refactor" Key="e7527f82-86d7-41aa-813d-682ad48fb541" ChangeDateTime="07/22/2019 17:50:25">
+    <Property Name="ElementName" Value="[dbo].[Dimensao_Produto].[Id_Categoria]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dimensao_Produto]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Id_Marca" />
+  </Operation>
+  <Operation Name="Rename Refactor" Key="da12e3e5-2efe-42c4-a1fc-a989f4d2a95e" ChangeDateTime="07/22/2019 17:50:29">
+    <Property Name="ElementName" Value="[dbo].[Dimensao_Produto].[Desc_Categoria]" />
+    <Property Name="ElementType" Value="SqlSimpleColumn" />
+    <Property Name="ParentElementName" Value="[dbo].[Dimensao_Produto]" />
+    <Property Name="ParentElementType" Value="SqlTable" />
+    <Property Name="NewName" Value="Desc_Marca" />
+  </Operation>
 </Operations>

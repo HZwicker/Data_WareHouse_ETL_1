@@ -11,26 +11,16 @@
   DTS:LocaleID="1046"
   DTS:ObjectName="CargaDimensoes"
   DTS:PackageType="5"
-  DTS:VersionBuild="32"
-  DTS:VersionGUID="{10A72347-DAA6-402E-95E7-0BB328087570}">
+  DTS:VersionBuild="63"
+  DTS:VersionGUID="{36C47DCA-A366-495C-9F65-97A63FCF5846}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
   <DTS:ConnectionManagers>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-      DTS:CreationName="OLEDB"
-      DTS:DTSID="{A0366581-23B2-4BB0-8B9E-CD82DFFA2D87}"
-      DTS:ObjectName="Conexão com o Datawarehouse">
-      <DTS:ObjectData>
-        <DTS:ConnectionManager
-          DTS:ConnectionString="Data Source=DESKTOP-953OF61;Initial Catalog=DW_ROUPAS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-Package-{A0366581-23B2-4BB0-8B9E-CD82DFFA2D87}Conexão com o Datawarehouse;" />
-      </DTS:ObjectData>
-    </DTS:ConnectionManager>
-    <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+      DTS:refId="Package.ConnectionManagers[Conexão CSV Estado REgiao]"
       DTS:CreationName="FLATFILE"
-      DTS:DTSID="{E89C8A37-4C85-4881-86E8-ABF74610080E}"
-      DTS:ObjectName="Gerenciador de Conexões de Arquivos Simples">
+      DTS:DTSID="{15E5D119-E993-48A6-845A-E070D47CCFCE}"
+      DTS:ObjectName="Conexão CSV Estado REgiao">
       <DTS:ObjectData>
         <DTS:ConnectionManager
           DTS:Format="Delimited"
@@ -40,7 +30,7 @@
           DTS:RowDelimiter=""
           DTS:TextQualifier="_x003C_none_x003E_"
           DTS:CodePage="65001"
-          DTS:ConnectionString="D:\Cursos Alura\Projetos\Data_WareHouse_Roupas_ETL_1\Regiões Estados.csv">
+          DTS:ConnectionString="D:\Cursos Alura\Projetos\Data_WareHouse_Roupas_ETL_1\Excel\Dimensão Cliente\Regiões Estados.csv">
           <DTS:FlatFileColumns>
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -49,7 +39,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ESTADO ABREVIAÇÃO"
-              DTS:DTSID="{6B44AC17-D246-43D5-8131-8BD31D9A4915}"
+              DTS:DTSID="{E8A02582-BC33-478E-AE32-E9E9DF676022}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -58,7 +48,7 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="ESTADO"
-              DTS:DTSID="{07030E62-EC75-4CCE-A826-D1A0B98C0655}"
+              DTS:DTSID="{3D2C0951-CC98-4690-856F-E78A2499973D}"
               DTS:CreationName="" />
             <DTS:FlatFileColumn
               DTS:ColumnType="Delimited"
@@ -67,20 +57,40 @@
               DTS:DataType="129"
               DTS:TextQualified="True"
               DTS:ObjectName="REGIAO"
-              DTS:DTSID="{45919F3C-6A14-47AD-867E-DE14DEC2C4D1}"
+              DTS:DTSID="{F4B9E70B-7C8C-438E-9289-D260333B5A0F}"
               DTS:CreationName="" />
           </DTS:FlatFileColumns>
         </DTS:ConnectionManager>
       </DTS:ObjectData>
     </DTS:ConnectionManager>
     <DTS:ConnectionManager
-      DTS:refId="Package.ConnectionManagers[Gerenciador de Conexões do Excel]"
-      DTS:CreationName="EXCEL"
-      DTS:DTSID="{E5D5F4B9-CA6A-4360-B5CC-6E19114C3575}"
-      DTS:ObjectName="Gerenciador de Conexões do Excel">
+      DTS:refId="Package.ConnectionManagers[Conexão Datawarehouse]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{A80C4951-88D4-46C1-BAE2-AC5980F59E7C}"
+      DTS:ObjectName="Conexão Datawarehouse">
       <DTS:ObjectData>
         <DTS:ConnectionManager
-          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Cursos Alura\Projetos\Data_WareHouse_Roupas_ETL_1\Cadastro de Clientes .xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+          DTS:ConnectionString="Data Source=DESKTOP-953OF61;Initial Catalog=DW_ROUPAS;Provider=MSOLEDBSQL.1;Integrated Security=SSPI;Auto Translate=False;Application Name=SSIS-CargaDimensoes-{A80C4951-88D4-46C1-BAE2-AC5980F59E7C}DESKTOP-953OF61.DW_ROUPAS;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Conexão Planilha Produtos]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{2B0468FD-4583-42DF-99E3-B9734EBF5704}"
+      DTS:ObjectName="Conexão Planilha Produtos">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.16.0;Data Source=D:\Cursos Alura\Projetos\Data_WareHouse_Roupas_ETL_1\Excel\Dimensão Produto\PRODUTOS.xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Conexão PlanilhaClientes]"
+      DTS:CreationName="EXCEL"
+      DTS:DTSID="{BB41E9A3-E7EA-42FE-965D-32CA3782707B}"
+      DTS:ObjectName="Conexão PlanilhaClientes">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Provider=Microsoft.ACE.OLEDB.12.0;Data Source=D:\Cursos Alura\Projetos\Data_WareHouse_Roupas_ETL_1\Excel\Dimensão Cliente\Cadastro de Clientes .xlsx;Extended Properties=&quot;EXCEL 12.0 XML;HDR=YES&quot;;" />
       </DTS:ObjectData>
     </DTS:ConnectionManager>
   </DTS:ConnectionManagers>
@@ -122,8 +132,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Cliente\Arquivo CSV Estado com Região.Connections[FlatFileConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
-                  connectionManagerRefId="Package.ConnectionManagers[Gerenciador de Conexões de Arquivos Simples]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão CSV Estado REgiao]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão CSV Estado REgiao]"
                   name="FlatFileConnection" />
               </connections>
               <outputs>
@@ -728,8 +738,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Cliente\Comando OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -996,8 +1006,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Cliente\Comando OLE DB 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -1699,8 +1709,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Cliente\Dimensão de Alteração Lenta.Connections[LookupConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="Define a conexão a ser usada para pesquisas na tabela de dimensão"
                   name="LookupConnection" />
               </connections>
@@ -2202,8 +2212,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Cliente\Inserir Destino.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -2617,8 +2627,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Cliente\Planilha de Clientes.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Gerenciador de Conexões do Excel]"
-                  connectionManagerRefId="Package.ConnectionManagers[Gerenciador de Conexões do Excel]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão PlanilhaClientes]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão PlanilhaClientes]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -2844,7 +2854,6 @@
       DTS:refId="Package\Dimensão Fábrica"
       DTS:CreationName="Microsoft.Pipeline"
       DTS:Description="Tarefa Fluxo de Dados"
-      DTS:Disabled="True"
       DTS:DTSID="{47B4ADBA-FE33-4BF2-953A-44D8AE794EEC}"
       DTS:ExecutableType="Microsoft.Pipeline"
       DTS:LocaleID="-1"
@@ -2882,8 +2891,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Fábrica\Comando OLE DB.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -2998,8 +3007,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Fábrica\Comando OLE DB 1.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -3243,8 +3252,8 @@
               <connections>
                 <connection
                   refId="Package\Dimensão Fábrica\Dimensão de Alteração Lenta.Connections[LookupConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="Define a conexão a ser usada para pesquisas na tabela de dimensão"
                   name="LookupConnection" />
               </connections>
@@ -3407,8 +3416,8 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
               <connections>
                 <connection
                   refId="Package\Dimensão Fábrica\Executar Consulta SQL.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -3551,8 +3560,8 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
               <connections>
                 <connection
                   refId="Package\Dimensão Fábrica\Inserir Destino.Connections[OleDbConnection]"
-                  connectionManagerID="Package.ConnectionManagers[Conexão com o Datawarehouse]"
-                  connectionManagerRefId="Package.ConnectionManagers[Conexão com o Datawarehouse]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
                   description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
                   name="OleDbConnection" />
               </connections>
@@ -3650,6 +3659,1285 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
         </pipeline>
       </DTS:ObjectData>
     </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Dimensão Produto"
+      DTS:CreationName="Microsoft.Pipeline"
+      DTS:Description="Tarefa Fluxo de Dados"
+      DTS:DTSID="{FF7A6BE5-0348-4EE2-A27E-ED9AD15C0EA8}"
+      DTS:ExecutableType="Microsoft.Pipeline"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Dimensão Produto"
+      DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Dimensão Produto\Comando OLE DB"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+              description="Executa uma instrução SQL para cada linha em um fluxo de dados. Por exemplo, chame um procedimento armazenado 'new employee setup' para cada linha da tabela 'new employees'. Observação: a execução de uma instrução SQL para cada linha de um fluxo de dados grande pode demorar."
+              name="Comando OLE DB"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Dimensao_Produto] SET [Atr_Cor] = ?,[Atr_Tamanho] = ?,[Desc_Marca] = ?,[Desc_Produto] = ?,[Id_Marca] = ? WHERE [Id_Produto] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimensão Produto\Comando OLE DB.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB]"
+                  errorOrTruncationOperation="Execução de Comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Comando OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[Atr_Cor]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Atr_Cor"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Cor]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[Atr_Tamanho]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Atr_Tamanho"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Tamanho]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[Desc_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Desc_Marca"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Marca]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[Desc_Produto]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Desc_Produto"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Produto]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[Id_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Id_Marca"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Marca]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].Columns[Id_Produto]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Id_Produto"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Produto]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimensão Produto\Comando OLE DB.Outputs[Saída de Comando OLE DB]"
+                  exclusionGroup="1"
+                  name="Saída de Comando OLE DB"
+                  synchronousInputId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Comando OLE DB"
+                  synchronousInputId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Comando OLE DB.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimensão Produto\Comando OLE DB 1"
+              componentClassID="Microsoft.OLEDBCommand"
+              contactInfo="Comando OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;2"
+              description="Executa uma instrução SQL para cada linha em um fluxo de dados. Por exemplo, chame um procedimento armazenado 'new employee setup' para cada linha da tabela 'new employees'. Observação: a execução de uma instrução SQL para cada linha de um fluxo de dados grande pode demorar."
+              name="Comando OLE DB 1"
+              usesDispositions="true"
+              version="2">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  expressionType="Notify"
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">UPDATE [dbo].[Dimensao_Produto] SET [Atr_Cor] = ?,[Atr_Tamanho] = ?,[Desc_Marca] = ?,[Desc_Produto] = ?,[Id_Marca] = ? WHERE [Id_Produto] = ?</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimensão Produto\Comando OLE DB 1.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB]"
+                  errorOrTruncationOperation="Execução de Comando"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Comando OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].Columns[Atr_Cor]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Atr_Cor"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Cor]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].Columns[Atr_Tamanho]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Atr_Tamanho"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Tamanho]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].Columns[Desc_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Desc_Marca"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Marca]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].Columns[Desc_Produto]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Desc_Produto"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Produto]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].Columns[Id_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Id_Marca"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Marca]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].Columns[Id_Produto]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Id_Produto"
+                      externalMetadataColumnId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Produto]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_0]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_0">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_1]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_1">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_2]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_2">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_3]"
+                      dataType="wstr"
+                      length="200"
+                      name="Param_3">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_4]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB].ExternalColumns[Param_5]"
+                      dataType="wstr"
+                      length="50"
+                      name="Param_5">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="Informações de parâmetro. Corresponde os valores de DBPARAMFLAGSENUM de OLE DB."
+                          name="DBParamInfoFlags">65</property>
+                      </properties>
+                    </externalMetadataColumn>
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimensão Produto\Comando OLE DB 1.Outputs[Saída de Comando OLE DB]"
+                  exclusionGroup="1"
+                  name="Saída de Comando OLE DB"
+                  synchronousInputId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Comando OLE DB 1.Outputs[Saída de Erro de Comando OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Comando OLE DB"
+                  synchronousInputId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Comando OLE DB 1.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Comando OLE DB 1.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Comando OLE DB 1.Outputs[Saída de Erro de Comando OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimensão Produto\Conexão Produtos"
+              componentClassID="Microsoft.ExcelSource"
+              contactInfo="Origem do Excel;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;1"
+              description="Origem do Excel"
+              name="Conexão Produtos"
+              usesDispositions="true"
+              version="1">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">Sheet1$</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.String"
+                  description="A variável que contém o comando SQL a ser executado."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.String"
+                  description="O mapeamento de parâmetros no comando SQL para variáveis."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimensão Produto\Conexão Produtos.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Planilha Produtos]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Planilha Produtos]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel]"
+                  name="Saída de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[CODP]"
+                      dataType="r8"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[CODP]"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[CODP]"
+                      name="CODP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[DESCRITOR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[DESCRITOR]"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[DESCRITOR]"
+                      name="DESCRITOR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[COR]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[COR]"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[COR]"
+                      name="COR"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[TAMANHO]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[TAMANHO]"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[TAMANHO]"
+                      name="TAMANHO"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[MARCA]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[MARCA]"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[MARCA]"
+                      name="MARCA"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[CODP]"
+                      dataType="r8"
+                      name="CODP" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[DESCRITOR]"
+                      dataType="wstr"
+                      length="255"
+                      name="DESCRITOR" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[COR]"
+                      dataType="wstr"
+                      length="255"
+                      name="COR" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[TAMANHO]"
+                      dataType="wstr"
+                      length="255"
+                      name="TAMANHO" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].ExternalColumns[MARCA]"
+                      dataType="wstr"
+                      length="255"
+                      name="MARCA" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel]"
+                  isErrorOut="true"
+                  name="Saída de Erro de Origem do Excel">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[CODP]"
+                      dataType="r8"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[CODP]"
+                      name="CODP" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[DESCRITOR]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[DESCRITOR]"
+                      name="DESCRITOR" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[COR]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[COR]"
+                      name="COR" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[TAMANHO]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[TAMANHO]"
+                      name="TAMANHO" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[MARCA]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[MARCA]"
+                      name="MARCA" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Erro de Origem do Excel].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimensão Produto\Conversão de Dados"
+              componentClassID="Microsoft.DataConvert"
+              contactInfo="Conversão de Dados;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Conversão de Dados"
+              name="Conversão de Dados"
+              usesDispositions="true">
+              <inputs>
+                <input
+                  refId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+                  name="Entrada de Conversão de Dados">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[CODP]"
+                      cachedDataType="r8"
+                      cachedName="CODP"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[CODP]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[DESCRITOR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="DESCRITOR"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[DESCRITOR]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[COR]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="COR"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[COR]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[TAMANHO]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="TAMANHO"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[TAMANHO]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[MARCA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MARCA"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[MARCA]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados].Columns[Desc_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="Desc_Marca"
+                      lineageId="Package\Dimensão Produto\Copiar Coluna.Outputs[Copiar Saída de Coluna].Columns[Desc_Marca]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados]"
+                  exclusionGroup="1"
+                  name="Saída de Conversão de Dados"
+                  synchronousInputId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Produto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Produto]"
+                      name="Id_Produto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[CODP]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Produto]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Produto]"
+                      name="Desc_Produto"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[DESCRITOR]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Cor]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Cor]"
+                      name="Atr_Cor"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[COR]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Tamanho]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Tamanho]"
+                      name="Atr_Tamanho"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[TAMANHO]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Marca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="50"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Marca]"
+                      name="Id_Marca"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[MARCA]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Marca]"
+                      dataType="wstr"
+                      errorOrTruncationOperation="Conversão"
+                      errorRowDisposition="FailComponent"
+                      length="200"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Marca]"
+                      name="Desc_Marca"
+                      truncationRowDisposition="FailComponent">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica a coluna de entrada usada como a origem dois dados para a conversão."
+                          name="SourceInputColumnLineageID">#{Package\Dimensão Produto\Copiar Coluna.Outputs[Copiar Saída de Coluna].Columns[Desc_Marca]}</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indica se a coluna usa as rotinas de análise de localidade neutro mais rápidas."
+                          name="FastParse">false</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Conversão de Dados"
+                  synchronousInputId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Erro de Conversão de Dados].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimensão Produto\Copiar Coluna"
+              componentClassID="Microsoft.CopyMap"
+              contactInfo="Copiar Coluna;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;0"
+              description="Copia colunas de entrada em novas colunas na saída da transformação. Por exemplo, crie uma cópia da coluna 'address' para que ela possa ser limpa por transformações subsequentes e deixar a coluna original no lugar para fins de auditoria."
+              name="Copiar Coluna">
+              <inputs>
+                <input
+                  refId="Package\Dimensão Produto\Copiar Coluna.Inputs[Copiar Entrada de Coluna]"
+                  name="Copiar Entrada de Coluna">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Copiar Coluna.Inputs[Copiar Entrada de Coluna].Columns[MARCA]"
+                      cachedDataType="wstr"
+                      cachedLength="255"
+                      cachedName="MARCA"
+                      lineageId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[MARCA]" />
+                  </inputColumns>
+                  <externalMetadataColumns />
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimensão Produto\Copiar Coluna.Outputs[Copiar Saída de Coluna]"
+                  name="Copiar Saída de Coluna"
+                  synchronousInputId="Package\Dimensão Produto\Copiar Coluna.Inputs[Copiar Entrada de Coluna]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Copiar Coluna.Outputs[Copiar Saída de Coluna].Columns[Desc_Marca]"
+                      dataType="wstr"
+                      length="255"
+                      lineageId="Package\Dimensão Produto\Copiar Coluna.Outputs[Copiar Saída de Coluna].Columns[Desc_Marca]"
+                      name="Desc_Marca">
+                      <properties>
+                        <property
+                          containsID="true"
+                          dataType="System.Int32"
+                          description="Especifica o identificador de linhagem da coluna a ser copiada."
+                          name="copyColumnId">#{Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel].Columns[MARCA]}</property>
+                      </properties>
+                    </outputColumn>
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimensão Produto\Dimensão de Alteração Lenta"
+              componentClassID="Microsoft.SCD"
+              contactInfo="Dimensão de Alteração Lenta;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;3"
+              description="Atualiza uma dimensão de data warehouse do SQL Server Analysis Services. Atualize registros da dimensão que já estejam presentes e insira os registros que não estão. Por exemplo, atualize a tabela DimProduct do banco de dados OLAP AdventureWorksDW com dados da tabela Products do banco de dados OLTP AdventureWorks."
+              name="Dimensão de Alteração Lenta"
+              version="3">
+              <properties>
+                <property
+                  dataType="System.String"
+                  description="Especifica a instrução SELECT usada para criar um conjunto de linhas de esquema."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">SELECT [Atr_Cor], [Atr_Tamanho], [Desc_Marca], [Desc_Produto], [Id_Marca], [Id_Produto] FROM [dbo].[Dimensao_Produto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a cláusula WHERE na instrução SELECT que seleciona a linha atual entre as linhas com chaves de negócios idênticas."
+                  name="CurrentRowWhere"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as atualizações de atributo de histórico são direcionadas para a saída de transformação para atualizações de atributo de alteração."
+                  name="UpdateChangingAttributeHistory">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação falhará quando as colunas com atributos fixos contiverem alterações."
+                  name="FailOnFixedAttributeChange">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome da coluna para o membro inferido."
+                  name="InferredMemberIndicator"></property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as atualizações de membro inferido são detectadas."
+                  name="EnableInferredMember">true</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se a transformação falhará quando uma pesquisa de registro existente falhar."
+                  name="FailOnLookupFailure">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica que todas as linhas na entrada são novas ou a transformação detecta o tipo de alteração."
+                  name="IncomingRowChangeType"
+                  typeConverter="IncomingRowChangeType">1</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Connections[LookupConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  description="Define a conexão a ser usada para pesquisas na tabela de dimensão"
+                  name="LookupConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]"
+                  name="Entrada de Dimensão de Alteração Lenta">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Atr_Cor]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Atr_Cor"
+                      externalMetadataColumnId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Atr_Cor]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Cor]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Atr_Tamanho]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Atr_Tamanho"
+                      externalMetadataColumnId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Atr_Tamanho]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Tamanho]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Desc_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Desc_Marca"
+                      externalMetadataColumnId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Desc_Marca]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Marca]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Desc_Produto]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Desc_Produto"
+                      externalMetadataColumnId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Desc_Produto]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Produto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Id_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Id_Marca"
+                      externalMetadataColumnId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Id_Marca]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Marca]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">2</property>
+                      </properties>
+                    </inputColumn>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].Columns[Id_Produto]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Id_Produto"
+                      externalMetadataColumnId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Id_Produto]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Produto]">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          name="ColumnType"
+                          typeConverter="ColumnType">1</property>
+                      </properties>
+                    </inputColumn>
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Atr_Cor]"
+                      dataType="wstr"
+                      length="200"
+                      name="Atr_Cor" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Atr_Tamanho]"
+                      dataType="wstr"
+                      length="200"
+                      name="Atr_Tamanho" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Desc_Marca]"
+                      dataType="wstr"
+                      length="200"
+                      name="Desc_Marca" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Desc_Produto]"
+                      dataType="wstr"
+                      length="200"
+                      name="Desc_Produto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Id_Marca]"
+                      dataType="wstr"
+                      length="50"
+                      name="Id_Marca" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta].ExternalColumns[Id_Produto]"
+                      dataType="wstr"
+                      length="50"
+                      name="Id_Produto" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Saída Inalterada]"
+                  description="Linhas inalteradas"
+                  exclusionGroup="1"
+                  name="Saída Inalterada"
+                  synchronousInputId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Nova Saída]"
+                  description="Novas linhas"
+                  exclusionGroup="1"
+                  name="Nova Saída"
+                  synchronousInputId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Saída de Atributo Fixo]"
+                  description="Linhas com alterações em colunas marcadas com FixedAttribute"
+                  exclusionGroup="1"
+                  name="Saída de Atributo Fixo"
+                  synchronousInputId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Atributo de Alteração]"
+                  description="Essas linhas contêm novas informações para as alterações da coluna ChangingAttribute (Type 1)"
+                  exclusionGroup="1"
+                  name="Saída de Atualizações de Atributo de Alteração"
+                  synchronousInputId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Saída de Inserções de Atributo de Histórico]"
+                  description="O resultado de alterações de HistoricalAttribute (Type 2) nessas novas linhas"
+                  exclusionGroup="2"
+                  name="Saída de Inserções de Atributo de Histórico"
+                  synchronousInputId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+                <output
+                  refId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Membro Inferido]"
+                  description="Informações para atualizar a linha de dimensão inicial sem preenchimento"
+                  exclusionGroup="1"
+                  name="Saída de Atualizações de Membro Inferido"
+                  synchronousInputId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]">
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+            <component
+              refId="Package\Dimensão Produto\Inserir Destino"
+              componentClassID="Microsoft.OLEDBDestination"
+              contactInfo="Destino OLE DB;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; Todos os Direitos Reservados; http://www.microsoft.com/sql/support;4"
+              description="Destino OLE DB"
+              name="Inserir Destino"
+              usesDispositions="true"
+              version="4">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="O tempo em segundos antes que um comando expire. Zero indica uma expiração infinita."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowset">[dbo].[Dimensao_Produto]</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica a variável que contém o nome do objeto de banco de dados usado para abrir um conjunto de linhas."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="O comando SQL a ser executado."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica a página de código de coluna a ser usada quando não há informações de página de código disponíveis a partir da fonte de dados."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forca o uso do valor da propriedade DefaultCodePage durante a descrição dos dados de caractere."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica o modo usado para acessar o banco de dados."
+                  name="AccessMode"
+                  typeConverter="AccessMode">0</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se os valores fornecidos para colunas de identidade serão copiados no destino. Se false, os valores para colunas de identidade serão gerados automaticamente no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepIdentity">false</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Indica se as colunas que contêm null terão null inserido no destino. Se false, as colunas que contêm null terão seus valores padrão inseridos no destino. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadKeepNulls">false</property>
+                <property
+                  dataType="System.String"
+                  description="Especifica as opções a serem usadas com o carregamento rápido. Aplicável apenas se o carregamento rápido estiver ativado."
+                  name="FastLoadOptions"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Especifica quando confirmações são emitidas durante a inserção de dados. Um valor de 0 especifica que uma confirmação será emitida ao final da inserção de dados. Aplicável somente se o carregamento rápido estiver ativado."
+                  name="FastLoadMaxInsertCommitSize">2147483647</property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Dimensão Produto\Inserir Destino.Connections[OleDbConnection]"
+                  connectionManagerID="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  connectionManagerRefId="Package.ConnectionManagers[Conexão Datawarehouse]"
+                  description="A conexão de tempo de execução OLE DB usada para acessar o banco de dados."
+                  name="OleDbConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB]"
+                  errorOrTruncationOperation="Inserir"
+                  errorRowDisposition="FailComponent"
+                  hasSideEffects="true"
+                  name="Entrada de Destino OLE DB">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[Id_Produto]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Id_Produto"
+                      externalMetadataColumnId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Id_Produto]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Produto]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[Desc_Produto]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Desc_Produto"
+                      externalMetadataColumnId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Produto]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Produto]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[Atr_Cor]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Atr_Cor"
+                      externalMetadataColumnId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Atr_Cor]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Cor]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[Atr_Tamanho]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Atr_Tamanho"
+                      externalMetadataColumnId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Atr_Tamanho]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Atr_Tamanho]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[Id_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="50"
+                      cachedName="Id_Marca"
+                      externalMetadataColumnId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Id_Marca]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Id_Marca]" />
+                    <inputColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].Columns[Desc_Marca]"
+                      cachedDataType="wstr"
+                      cachedLength="200"
+                      cachedName="Desc_Marca"
+                      externalMetadataColumnId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Marca]"
+                      lineageId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados].Columns[Desc_Marca]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Id_Produto]"
+                      dataType="wstr"
+                      length="50"
+                      name="Id_Produto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Produto]"
+                      dataType="wstr"
+                      length="200"
+                      name="Desc_Produto" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Atr_Cor]"
+                      dataType="wstr"
+                      length="200"
+                      name="Atr_Cor" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Atr_Tamanho]"
+                      dataType="wstr"
+                      length="200"
+                      name="Atr_Tamanho" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Id_Marca]"
+                      dataType="wstr"
+                      length="50"
+                      name="Id_Marca" />
+                    <externalMetadataColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB].ExternalColumns[Desc_Marca]"
+                      dataType="wstr"
+                      length="200"
+                      name="Desc_Marca" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+              <outputs>
+                <output
+                  refId="Package\Dimensão Produto\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB]"
+                  exclusionGroup="1"
+                  isErrorOut="true"
+                  name="Saída de Erro de Destino OLE DB"
+                  synchronousInputId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB]">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Dimensão Produto\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Dimensão Produto\Inserir Destino.Outputs[Saída de Erro de Destino OLE DB].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Dimensão Produto.Paths[Copiar Saída de Coluna]"
+              endId="Package\Dimensão Produto\Conversão de Dados.Inputs[Entrada de Conversão de Dados]"
+              name="Copiar Saída de Coluna"
+              startId="Package\Dimensão Produto\Copiar Coluna.Outputs[Copiar Saída de Coluna]" />
+            <path
+              refId="Package\Dimensão Produto.Paths[Nova Saída]"
+              endId="Package\Dimensão Produto\Inserir Destino.Inputs[Entrada de Destino OLE DB]"
+              name="Nova Saída"
+              startId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Nova Saída]" />
+            <path
+              refId="Package\Dimensão Produto.Paths[Saída de Atualizações de Atributo de Alteração]"
+              endId="Package\Dimensão Produto\Comando OLE DB 1.Inputs[Entrada de Comando OLE DB]"
+              name="Saída de Atualizações de Atributo de Alteração"
+              startId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Atributo de Alteração]" />
+            <path
+              refId="Package\Dimensão Produto.Paths[Saída de Atualizações de Membro Inferido]"
+              endId="Package\Dimensão Produto\Comando OLE DB.Inputs[Entrada de Comando OLE DB]"
+              name="Saída de Atualizações de Membro Inferido"
+              startId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Outputs[Saída de Atualizações de Membro Inferido]" />
+            <path
+              refId="Package\Dimensão Produto.Paths[Saída de Conversão de Dados]"
+              endId="Package\Dimensão Produto\Dimensão de Alteração Lenta.Inputs[Entrada de Dimensão de Alteração Lenta]"
+              name="Saída de Conversão de Dados"
+              startId="Package\Dimensão Produto\Conversão de Dados.Outputs[Saída de Conversão de Dados]" />
+            <path
+              refId="Package\Dimensão Produto.Paths[Saída de Origem do Excel]"
+              endId="Package\Dimensão Produto\Copiar Coluna.Inputs[Copiar Entrada de Coluna]"
+              name="Saída de Origem do Excel"
+              startId="Package\Dimensão Produto\Conexão Produtos.Outputs[Saída de Origem do Excel]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
   </DTS:Executables>
   <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
 <!--Esta seção CDATA contém as informações de layout do pacote. A seção inclui informações como coordenadas (x,y), largura e altura.-->
@@ -3666,11 +4954,15 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
         <NodeLayout
           Size="161.113043478261,41.7391304347827"
           Id="Package\Dimensão Cliente"
-          TopLeft="494.608675998191,123.443473662242" />
+          TopLeft="221.217382513959,23.7391295504312" />
         <NodeLayout
           Size="162.782608695653,41.7391304347827"
           Id="Package\Dimensão Fábrica"
-          TopLeft="191.304340224336,127.51303872803" />
+          TopLeft="10.4347821940554,23.7391295504311" />
+        <NodeLayout
+          Size="165.28695652174,41.7391304347827"
+          Id="Package\Dimensão Produto"
+          TopLeft="459.130416538405,24.4173903947291" />
       </GraphLayout>
     </LayoutInfo>
   </Package>
@@ -3680,6 +4972,14 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
       <GraphLayout
         Capacity="32" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
         <NodeLayout
+          Size="239.582608695653,41.7391304347827"
+          Id="Package\Dimensão Cliente\Classificar Estado vindo de Região"
+          TopLeft="314.34347826087,310.717391304347" />
+        <NodeLayout
+          Size="359.791304347827,41.7391304347827"
+          Id="Package\Dimensão Cliente\Criação de ID para os níveis de Cidade, Segmento e Região"
+          TopLeft="254.239130434783,514.195652173913" />
+        <NodeLayout
           Size="251.269565217392,41.7391304347827"
           Id="Package\Dimensão Cliente\Extração Cidade e Estado Separados"
           TopLeft="5.50000000000003,208.978260869565" />
@@ -3688,9 +4988,257 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
           Id="Package\Dimensão Cliente\Planilha de Clientes"
           TopLeft="45.9869565217392,5.49999999999995" />
         <NodeLayout
+          Size="193.669565217392,41.7391304347827"
+          Id="Package\Dimensão Cliente\Conversão para Unicode"
+          TopLeft="337.3,615.934782608696" />
+        <NodeLayout
+          Size="244.591304347827,41.7391304347827"
+          Id="Package\Dimensão Cliente\Classificar Estado vindo de Clientes"
+          TopLeft="8.83913043478263,310.717391304347" />
+        <NodeLayout
+          Size="171.965217391305,41.7391304347827"
+          Id="Package\Dimensão Cliente\Comando OLE DB 1"
+          TopLeft="576.152173913044,819.413043478261" />
+        <NodeLayout
           Size="231.234782608696,41.7391304347827"
           Id="Package\Dimensão Cliente\Extração Cidade e Estado juntos"
           TopLeft="15.5173913043479,107.239130434782" />
+        <NodeLayout
+          Size="162.782608695653,41.7391304347827"
+          Id="Package\Dimensão Cliente\Comando OLE DB"
+          TopLeft="352.74347826087,819.413043478261" />
+        <NodeLayout
+          Size="220.382608695653,41.7391304347827"
+          Id="Package\Dimensão Cliente\Junção da planilha com o CSV"
+          TopLeft="323.94347826087,410.786956521739" />
+        <NodeLayout
+          Size="217.04347826087,41.7391304347827"
+          Id="Package\Dimensão Cliente\Dimensão de Alteração Lenta"
+          TopLeft="325.613043478261,717.673913043478" />
+        <NodeLayout
+          Size="148.591304347827,41.7391304347827"
+          Id="Package\Dimensão Cliente\Inserir Destino"
+          TopLeft="143.839130434783,819.413043478261" />
+        <NodeLayout
+          Size="230.4,41.7391304347827"
+          Id="Package\Dimensão Cliente\Arquivo CSV Estado com Região"
+          TopLeft="318.934782608696,208.978260869565" />
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Saída de Atualizações de Membro Inferido]"
+          TopLeft="434.134782608696,759.413043478261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-93.5976953125,20.1254882812501,187.195390625,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Saída de Atualizações de Atributo de Alteração]"
+          TopLeft="486.395652173913,759.413043478261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.739130434783,60.0000000000001"
+              Start="0,0"
+              End="175.739130434783,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4854881266491"
+                    Point2="0,20.4854881266491"
+                    Point3="4,20.4854881266491" />
+                  <mssgle:LineSegment
+                    End="171.739130434783,20.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.739130434783,20.4854881266491"
+                    Point2="175.739130434783,20.4854881266491"
+                    Point3="175.739130434783,24.4854881266491" />
+                  <mssgle:LineSegment
+                    End="175.739130434783,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.4931300951087,25.4854881266491,206.725390625,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Saída da Junção de Mesclagem]"
+          TopLeft="434.134782608696,452.526086956521">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,61.6695652173917"
+              Start="0,0"
+              End="0,54.1695652173917">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,54.1695652173917" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Nova Saída]"
+          TopLeft="381.873913043478,759.413043478261">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-163.739130434783,60.0000000000001"
+              Start="0,0"
+              End="-163.739130434783,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4854881266491"
+                    Point2="0,20.4854881266491"
+                    Point3="-4,20.4854881266491" />
+                  <mssgle:LineSegment
+                    End="-159.739130434783,20.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-159.739130434783,20.4854881266491"
+                    Point2="-163.739130434783,20.4854881266491"
+                    Point3="-163.739130434783,24.4854881266491" />
+                  <mssgle:LineSegment
+                    End="-163.739130434783,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-106.862924592391,25.4854881266491,49.98671875,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Copiar Saída de Coluna]"
+          TopLeft="434.134782608696,555.934782608696">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Classificar Saída1]"
+          TopLeft="434.134782608696,352.45652173913">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="35.3971014492753,58.3304347826091"
+              Start="0,0"
+              End="35.3971014492753,50.8304347826091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7460013897785" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.7460013897785"
+                    Point2="0,34.7460013897785"
+                    Point3="4,34.7460013897785" />
+                  <mssgle:LineSegment
+                    End="31.3971014492753,34.7460013897785" />
+                  <mssgle:CubicBezierSegment
+                    Point1="31.3971014492753,34.7460013897785"
+                    Point2="35.3971014492753,34.7460013897785"
+                    Point3="35.3971014492753,38.7460013897785" />
+                  <mssgle:LineSegment
+                    End="35.3971014492753,50.8304347826091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Classificar Saída]"
+          TopLeft="131.134782608696,352.45652173913">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="267.602898550725,58.3304347826091"
+              Start="0,0"
+              End="267.602898550725,50.8304347826091">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,30.7460013897785" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,30.7460013897785"
+                    Point2="0,34.7460013897785"
+                    Point3="4,34.7460013897785" />
+                  <mssgle:LineSegment
+                    End="263.602898550725,34.7460013897785" />
+                  <mssgle:CubicBezierSegment
+                    Point1="263.602898550725,34.7460013897785"
+                    Point2="267.602898550725,34.7460013897785"
+                    Point3="267.602898550725,38.7460013897785" />
+                  <mssgle:LineSegment
+                    End="267.602898550725,50.8304347826091" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
         <EdgeLayout
           Id="Package\Dimensão Cliente.Paths[Saída de Origem do Excel]"
           TopLeft="131.134782608696,47.2391304347826">
@@ -3710,41 +5258,81 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
-        <NodeLayout
-          Size="230.4,41.7391304347827"
-          Id="Package\Dimensão Cliente\Arquivo CSV Estado com Região"
-          TopLeft="318.934782608696,195.413043983604" />
-        <NodeLayout
-          Size="244.591304347827,41.7391304347827"
-          Id="Package\Dimensão Cliente\Classificar Estado vindo de Clientes"
-          TopLeft="8.83913043478263,310.717391304347" />
-        <NodeLayout
-          Size="239.582608695653,41.7391304347827"
-          Id="Package\Dimensão Cliente\Classificar Estado vindo de Região"
-          TopLeft="317.821738992221,310.717391304347" />
         <EdgeLayout
           Id="Package\Dimensão Cliente.Paths[Saída de Origem de Arquivo Simples]"
-          TopLeft="435.873912974371,237.152174418387">
+          TopLeft="434.134782608696,250.717391304348">
           <EdgeLayout.Curve>
             <mssgle:Curve
               StartConnector="{assembly:Null}"
-              EndConnector="0,73.5652168859606"
+              EndConnector="0,59.9999999999999"
               Start="0,0"
-              End="0,66.0652168859606">
+              End="0,52.4999999999999">
               <mssgle:Curve.Segments>
                 <mssgle:SegmentCollection
                   Capacity="5">
                   <mssgle:LineSegment
-                    End="0,66.0652168859606" />
+                    End="0,52.4999999999999" />
                 </mssgle:SegmentCollection>
               </mssgle:Curve.Segments>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Saída de Conversão de Dados]"
+          TopLeft="434.134782608696,657.673913043478">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Cliente.Paths[Saída de Coluna Derivada1]"
+          TopLeft="131.134782608696,250.717391304348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,59.9999999999994"
+              Start="0,0"
+              End="0,52.4999999999994">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.4999999999994" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
         <EdgeLayout
@@ -3766,298 +5354,8 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
             </mssgle:Curve>
           </EdgeLayout.Curve>
           <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Saída de Coluna Derivada1]"
-          TopLeft="131.134782608696,250.717391304348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,59.9999999999999"
-              Start="0,0"
-              End="0,52.4999999999999">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.4999999999999" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="220.382608695653,41.7391304347827"
-          Id="Package\Dimensão Cliente\Junção da planilha com o CSV"
-          TopLeft="179.015947787888,413.586956479627" />
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Classificar Saída]"
-          TopLeft="131.134782608696,352.45652173913">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="122.675368077743,61.1304347404968"
-              Start="0,0"
-              End="122.675368077743,53.6304347404968">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.4138923079713" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.4138923079713"
-                    Point2="0,36.4138923079713"
-                    Point3="4,36.4138923079713" />
-                  <mssgle:LineSegment
-                    End="118.675368077743,36.4138923079713" />
-                  <mssgle:CubicBezierSegment
-                    Point1="118.675368077743,36.4138923079713"
-                    Point2="122.675368077743,36.4138923079713"
-                    Point3="122.675368077743,40.4138923079713" />
-                  <mssgle:LineSegment
-                    End="122.675368077743,53.6304347404968" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Classificar Saída1]"
-          TopLeft="437.613043340047,352.45652173913">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-113.008689755057,61.1304347404968"
-              Start="0,0"
-              End="-113.008689755057,53.6304347404968">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,32.4138923079713" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,32.4138923079713"
-                    Point2="0,36.4138923079713"
-                    Point3="-4,36.4138923079713" />
-                  <mssgle:LineSegment
-                    End="-109.008689755057,36.4138923079713" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-109.008689755057,36.4138923079713"
-                    Point2="-113.008689755057,36.4138923079713"
-                    Point3="-113.008689755057,40.4138923079713" />
-                  <mssgle:LineSegment
-                    End="-113.008689755057,53.6304347404968" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="359.791304347827,41.7391304347827"
-          Id="Package\Dimensão Cliente\Criação de ID para os níveis de Cidade, Segmento e Região"
-          TopLeft="106.992759474234,530.021738540867" />
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Saída da Junção de Mesclagem]"
-          TopLeft="288.047831891931,455.32608691441">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,74.6956516264574"
-              Start="0,0"
-              End="0,67.1956516264574">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,67.1956516264574" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="193.669565217392,41.7391304347827"
-          Id="Package\Dimensão Cliente\Conversão para Unicode"
-          TopLeft="185.415948064315,623.847825792173" />
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Copiar Saída de Coluna]"
-          TopLeft="284.569571160579,571.76086897565">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,52.0869568165231"
-              Start="0,0"
-              End="0,44.5869568165231">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,44.5869568165231" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="217.04347826087,41.7391304347827"
-          Id="Package\Dimensão Cliente\Dimensão de Alteração Lenta"
-          TopLeft="171.410151055009,718.804347783975" />
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Saída de Conversão de Dados]"
-          TopLeft="281.091310429227,665.586956226955">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,53.2173915570199"
-              Start="0,0"
-              End="0,45.7173915570199">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,45.7173915570199" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <EdgeLabelCollection />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="148.591304347827,41.7391304347827"
-          Id="Package\Dimensão Cliente\Inserir Destino"
-          TopLeft="16.3029036185591,817.152173997268" />
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Nova Saída]"
-          TopLeft="227.671020620226,760.543478218758">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-137.072464827754,56.60869577851"
-              Start="0,0"
-              End="-137.072464827754,49.10869577851">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,15.3276127539293" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,15.3276127539293"
-                    Point2="0,19.3276127539293"
-                    Point3="-4,19.3276127539293" />
-                  <mssgle:LineSegment
-                    End="-133.072464827754,19.3276127539293" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-133.072464827754,19.3276127539293"
-                    Point2="-137.072464827754,19.3276127539293"
-                    Point3="-137.072464827754,23.3276127539293" />
-                  <mssgle:LineSegment
-                    End="-137.072464827754,49.10869577851" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
             <mssgm:EdgeLabel
-              BoundingBox="-93.529591788877,24.3276127539293,49.98671875,10.3349609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="162.782608695653,41.7391304347827"
-          Id="Package\Dimensão Cliente\Comando OLE DB"
-          TopLeft="232.163772907349,814.891304516274" />
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Saída de Atualizações de Membro Inferido]"
-          TopLeft="279.931890185443,760.543478218758">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="33.6231870697317,54.3478262975162"
-              Start="0,0"
-              End="33.6231870697317,46.8478262975162">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,23.1739131487581" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,23.1739131487581"
-                    Point2="0,27.1739131487581"
-                    Point3="4,27.1739131487581" />
-                  <mssgle:LineSegment
-                    End="29.6231870697317,27.1739131487581" />
-                  <mssgle:CubicBezierSegment
-                    Point1="29.6231870697317,27.1739131487581"
-                    Point2="33.6231870697317,27.1739131487581"
-                    Point3="33.6231870697317,31.1739131487581" />
-                  <mssgle:LineSegment
-                    End="33.6231870697317,46.8478262975162" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-76.7861017776341,32.1739131487581,187.195390625,12.2490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <NodeLayout
-          Size="171.965217391305,41.7391304347827"
-          Id="Package\Dimensão Cliente\Comando OLE DB 1"
-          TopLeft="461.369569778442,816.021739256771" />
-        <EdgeLayout
-          Id="Package\Dimensão Cliente.Paths[Saída de Atualizações de Atributo de Alteração]"
-          TopLeft="332.192759750661,760.543478218758">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="215.159418723433,55.478261038013"
-              Start="0,0"
-              End="215.159418723433,47.978261038013">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,14.9416542963559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,14.9416542963559"
-                    Point2="0,18.9416542963559"
-                    Point3="4,18.9416542963559" />
-                  <mssgle:LineSegment
-                    End="211.159418723433,18.9416542963559" />
-                  <mssgle:CubicBezierSegment
-                    Point1="211.159418723433,18.9416542963559"
-                    Point2="215.159418723433,18.9416542963559"
-                    Point3="215.159418723433,22.9416542963559" />
-                  <mssgle:LineSegment
-                    End="215.159418723433,47.978261038013" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="4.21701404921672,23.9416542963559,206.725390625,12.2490234375"
+              BoundingBox="0,0,0,0"
               RelativePosition="Any" />
           </EdgeLayout.Labels>
         </EdgeLayout>
@@ -4077,246 +5375,6 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
       </Property>
     </Properties>
   </PipelineComponentMetadata>
-  <TaskHost
-    design-time-name="Package\Dimensão Fábrica">
-    <LayoutInfo>
-      <GraphLayout
-        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
-        <NodeLayout
-          Size="217.04347826087,41.7391304347827"
-          Id="Package\Dimensão Fábrica\Dimensão de Alteração Lenta"
-          TopLeft="202.3,208.978260869566" />
-        <NodeLayout
-          Size="148.591304347827,41.7391304347827"
-          Id="Package\Dimensão Fábrica\Inserir Destino"
-          TopLeft="8.00434782608696,383.34347826087" />
-        <NodeLayout
-          Size="186.156521739131,41.7391304347827"
-          Id="Package\Dimensão Fábrica\Executar Consulta SQL"
-          TopLeft="217.74347826087,5.50000000000006" />
-        <NodeLayout
-          Size="162.782608695653,41.7391304347827"
-          Id="Package\Dimensão Fábrica\Comando OLE DB"
-          TopLeft="253.639130434783,377.500000000001" />
-        <NodeLayout
-          Size="171.965217391305,41.7391304347827"
-          Id="Package\Dimensão Fábrica\Comando OLE DB 1"
-          TopLeft="608.108695652174,372.491304347826" />
-        <NodeLayout
-          Size="176.139130434783,41.7391304347827"
-          Id="Package\Dimensão Fábrica\Conversão de Dados"
-          TopLeft="222.752173913044,107.239130434783" />
-        <EdgeLayout
-          Id="Package\Dimensão Fábrica.Paths[Saída de Origem OLE DB]"
-          TopLeft="310.821739130435,47.2391304347827">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dimensão Fábrica.Paths[Saída de Conversão de Dados]"
-          TopLeft="310.821739130435,148.978260869565">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="0,60.0000000000001"
-              Start="0,0"
-              End="0,52.5000000000001">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,52.5000000000001" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="0,0,0,0"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dimensão Fábrica.Paths[Saída de Atualizações de Membro Inferido]"
-          TopLeft="310.821739130435,250.717391304348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="24.2086956521739,126.782608695652"
-              Start="0,0"
-              End="24.2086956521739,119.282608695652">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,59.3913043478262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,59.3913043478262"
-                    Point2="0,63.3913043478262"
-                    Point3="4,63.3913043478262" />
-                  <mssgle:LineSegment
-                    End="20.2086956521739,63.3913043478262" />
-                  <mssgle:CubicBezierSegment
-                    Point1="20.2086956521739,63.3913043478262"
-                    Point2="24.2086956521739,63.3913043478262"
-                    Point3="24.2086956521739,67.3913043478262" />
-                  <mssgle:LineSegment
-                    End="24.2086956521739,119.282608695652" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-81.493347486413,68.3913043478262,187.195390625,12.2490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dimensão Fábrica.Paths[Saída de Atualizações de Atributo de Alteração]"
-          TopLeft="363.082608695652,250.717391304348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="331.008695652174,121.773913043478"
-              Start="0,0"
-              End="331.008695652174,114.273913043478">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,37.5766341631295" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,37.5766341631295"
-                    Point2="0,41.5766341631295"
-                    Point3="4,41.5766341631295" />
-                  <mssgle:LineSegment
-                    End="327.008695652174,41.5766341631295" />
-                  <mssgle:CubicBezierSegment
-                    Point1="327.008695652174,41.5766341631295"
-                    Point2="331.008695652174,41.5766341631295"
-                    Point3="331.008695652174,45.5766341631295" />
-                  <mssgle:LineSegment
-                    End="331.008695652174,114.273913043478" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="62.1416525135868,46.5766341631295,206.725390625,12.2490234375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-        <EdgeLayout
-          Id="Package\Dimensão Fábrica.Paths[Nova Saída]"
-          TopLeft="258.560869565218,250.717391304348">
-          <EdgeLayout.Curve>
-            <mssgle:Curve
-              StartConnector="{assembly:Null}"
-              EndConnector="-176.260869565218,132.626086956522"
-              Start="0,0"
-              End="-176.260869565218,125.126086956522">
-              <mssgle:Curve.Segments>
-                <mssgle:SegmentCollection
-                  Capacity="5">
-                  <mssgle:LineSegment
-                    End="0,41.2818354938627" />
-                  <mssgle:CubicBezierSegment
-                    Point1="0,41.2818354938627"
-                    Point2="0,45.2818354938627"
-                    Point3="-4,45.2818354938627" />
-                  <mssgle:LineSegment
-                    End="-172.260869565218,45.2818354938627" />
-                  <mssgle:CubicBezierSegment
-                    Point1="-172.260869565218,45.2818354938627"
-                    Point2="-176.260869565218,45.2818354938627"
-                    Point3="-176.260869565218,49.2818354938627" />
-                  <mssgle:LineSegment
-                    End="-176.260869565218,125.126086956522" />
-                </mssgle:SegmentCollection>
-              </mssgle:Curve.Segments>
-            </mssgle:Curve>
-          </EdgeLayout.Curve>
-          <EdgeLayout.Labels>
-            <mssgm:EdgeLabel
-              BoundingBox="-113.123794157609,50.2818354938627,49.98671875,10.3349609375"
-              RelativePosition="Any" />
-          </EdgeLayout.Labels>
-        </EdgeLayout>
-      </GraphLayout>
-    </LayoutInfo>
-  </TaskHost>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensão Fábrica\Dimensão de Alteração Lenta">
-    <Properties>
-      <Property>
-        <Name>SCDMetadata</Name>
-        <Value
-          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
-&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{A0366581-23B2-4BB0-8B9E-CD82DFFA2D87}&lt;/ConnectionID&gt;
-  &lt;TableName&gt;[dbo].[Dimensao_Fabrica]&lt;/TableName&gt;
-  &lt;InputToColumnsCollection&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Desc_Fabrica]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Desc_Fabrica&lt;/ColumnName&gt;
-      &lt;KeyType&gt;None&lt;/KeyType&gt;
-      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-    &lt;InputColumnToDBColumn&gt;
-      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Id_Fabrica]&lt;/IdentificationString&gt;
-      &lt;ColumnName&gt;Id_Fabrica&lt;/ColumnName&gt;
-      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
-      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
-    &lt;/InputColumnToDBColumn&gt;
-  &lt;/InputToColumnsCollection&gt;
-  &lt;GeneratedComponentsIdentificationStrings&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Inserir Destino&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB&lt;/anyType&gt;
-    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB 1&lt;/anyType&gt;
-  &lt;/GeneratedComponentsIdentificationStrings&gt;
-  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
-  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
-  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
-  &lt;CurrentIndicatorColumn /&gt;
-  &lt;InferredIndicatorColumn /&gt;
-  &lt;ValueCurrent /&gt;
-  &lt;ValueExpired /&gt;
-  &lt;StartDateColumn /&gt;
-  &lt;EndDateColumn /&gt;
-  &lt;DateVariable /&gt;
-  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
-&lt;/SCDWizardMetadata&gt;</Value>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
-  <PipelineComponentMetadata
-    design-time-name="Package\Dimensão Fábrica\Executar Consulta SQL">
-    <Properties>
-      <Property>
-        <Name>DataSourceViewID</Name>
-      </Property>
-    </Properties>
-  </PipelineComponentMetadata>
   <PipelineComponentMetadata
     design-time-name="Package\Dimensão Cliente\Dimensão de Alteração Lenta">
     <Properties>
@@ -4325,7 +5383,7 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
         <Value
           type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
 &lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
-  &lt;ConnectionID&gt;{A0366581-23B2-4BB0-8B9E-CD82DFFA2D87}&lt;/ConnectionID&gt;
+  &lt;ConnectionID&gt;{A80C4951-88D4-46C1-BAE2-AC5980F59E7C}&lt;/ConnectionID&gt;
   &lt;TableName&gt;[dbo].[Dimensao_Cliente]&lt;/TableName&gt;
   &lt;InputToColumnsCollection&gt;
     &lt;InputColumnToDBColumn&gt;
@@ -4387,6 +5445,513 @@ SELECT'005' AS CODIGO, 'Fábrica Espírito Santo' AS DESCRITOR</property>
       &lt;ColumnName&gt;Id_Segmento&lt;/ColumnName&gt;
       &lt;KeyType&gt;None&lt;/KeyType&gt;
       &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Inserir Destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dimensão Fábrica">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="217.04347826087,41.7391304347827"
+          Id="Package\Dimensão Fábrica\Dimensão de Alteração Lenta"
+          TopLeft="187.273913043478,208.978260869565" />
+        <NodeLayout
+          Size="148.591304347827,41.7391304347827"
+          Id="Package\Dimensão Fábrica\Inserir Destino"
+          TopLeft="5.50000000000004,310.717391304348" />
+        <NodeLayout
+          Size="186.156521739131,41.7391304347827"
+          Id="Package\Dimensão Fábrica\Executar Consulta SQL"
+          TopLeft="202.717391304348,5.49999999999995" />
+        <NodeLayout
+          Size="162.782608695653,41.7391304347827"
+          Id="Package\Dimensão Fábrica\Comando OLE DB"
+          TopLeft="214.404347826087,310.717391304348" />
+        <NodeLayout
+          Size="171.965217391305,41.7391304347827"
+          Id="Package\Dimensão Fábrica\Comando OLE DB 1"
+          TopLeft="437.813043478261,310.717391304348" />
+        <NodeLayout
+          Size="176.139130434783,41.7391304347827"
+          Id="Package\Dimensão Fábrica\Conversão de Dados"
+          TopLeft="207.726086956522,107.239130434783" />
+        <EdgeLayout
+          Id="Package\Dimensão Fábrica.Paths[Saída de Origem OLE DB]"
+          TopLeft="295.795652173913,47.2391304347826">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Fábrica.Paths[Saída de Conversão de Dados]"
+          TopLeft="295.795652173913,148.978260869565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Fábrica.Paths[Saída de Atualizações de Membro Inferido]"
+          TopLeft="295.795652173913,250.717391304348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-93.5976953125,20.1254882812501,187.195390625,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Fábrica.Paths[Saída de Atualizações de Atributo de Alteração]"
+          TopLeft="348.05652173913,250.717391304348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.739130434783,60.0000000000001"
+              Start="0,0"
+              End="175.739130434783,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4854881266491"
+                    Point2="0,20.4854881266491"
+                    Point3="4,20.4854881266491" />
+                  <mssgle:LineSegment
+                    End="171.739130434783,20.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.739130434783,20.4854881266491"
+                    Point2="175.739130434783,20.4854881266491"
+                    Point3="175.739130434783,24.4854881266491" />
+                  <mssgle:LineSegment
+                    End="175.739130434783,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.4931300951087,25.4854881266491,206.725390625,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Dimensão Fábrica.Paths[Nova Saída]"
+          TopLeft="243.534782608696,250.717391304348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-163.739130434783,60.0000000000001"
+              Start="0,0"
+              End="-163.739130434783,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4854881266491"
+                    Point2="0,20.4854881266491"
+                    Point3="-4,20.4854881266491" />
+                  <mssgle:LineSegment
+                    End="-159.739130434783,20.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-159.739130434783,20.4854881266491"
+                    Point2="-163.739130434783,20.4854881266491"
+                    Point3="-163.739130434783,24.4854881266491" />
+                  <mssgle:LineSegment
+                    End="-163.739130434783,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-106.862924592391,25.4854881266491,49.98671875,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensão Fábrica\Dimensão de Alteração Lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{A80C4951-88D4-46C1-BAE2-AC5980F59E7C}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dimensao_Fabrica]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Desc_Fabrica]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Fabrica&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Id_Fabrica]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Id_Fabrica&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+  &lt;/InputToColumnsCollection&gt;
+  &lt;GeneratedComponentsIdentificationStrings&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Inserir Destino&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB&lt;/anyType&gt;
+    &lt;anyType xsi:type="xsd:string"&gt;Comando OLE DB 1&lt;/anyType&gt;
+  &lt;/GeneratedComponentsIdentificationStrings&gt;
+  &lt;FailFixedAttribute&gt;false&lt;/FailFixedAttribute&gt;
+  &lt;FailChangeAttribute&gt;false&lt;/FailChangeAttribute&gt;
+  &lt;UseStartEndDate&gt;false&lt;/UseStartEndDate&gt;
+  &lt;CurrentIndicatorColumn /&gt;
+  &lt;InferredIndicatorColumn /&gt;
+  &lt;ValueCurrent /&gt;
+  &lt;ValueExpired /&gt;
+  &lt;StartDateColumn /&gt;
+  &lt;EndDateColumn /&gt;
+  &lt;DateVariable /&gt;
+  &lt;EnableInferredSupport&gt;true&lt;/EnableInferredSupport&gt;
+&lt;/SCDWizardMetadata&gt;</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensão Fábrica\Executar Consulta SQL">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Dimensão Produto">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="164.452173913044,41.7391304347827"
+          Id="Package\Dimensão Produto\Conexão Produtos"
+          TopLeft="213.569565217391,5.49999999999995" />
+        <NodeLayout
+          Size="144.417391304348,41.7391304347827"
+          Id="Package\Dimensão Produto\Copiar Coluna"
+          TopLeft="223.586956521739,107.239130434783" />
+        <EdgeLayout
+          Id="Package\Dimensão Produto.Paths[Saída de Origem do Excel]"
+          TopLeft="295.795652173913,47.2391304347826">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="176.139130434783,41.7391304347827"
+          Id="Package\Dimensão Produto\Conversão de Dados"
+          TopLeft="207.726086956522,208.978260869565" />
+        <EdgeLayout
+          Id="Package\Dimensão Produto.Paths[Copiar Saída de Coluna]"
+          TopLeft="295.795652173913,148.978260869565">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60"
+              Start="0,0"
+              End="0,52.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="217.04347826087,41.7391304347827"
+          Id="Package\Dimensão Produto\Dimensão de Alteração Lenta"
+          TopLeft="187.273913043478,310.717391304348" />
+        <EdgeLayout
+          Id="Package\Dimensão Produto.Paths[Saída de Conversão de Dados]"
+          TopLeft="295.795652173913,250.717391304348">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="148.591304347827,41.7391304347827"
+          Id="Package\Dimensão Produto\Inserir Destino"
+          TopLeft="5.50000000000004,412.456521739131" />
+        <EdgeLayout
+          Id="Package\Dimensão Produto.Paths[Nova Saída]"
+          TopLeft="243.534782608696,352.456521739131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-163.739130434783,60.0000000000001"
+              Start="0,0"
+              End="-163.739130434783,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4854881266491"
+                    Point2="0,20.4854881266491"
+                    Point3="-4,20.4854881266491" />
+                  <mssgle:LineSegment
+                    End="-159.739130434783,20.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-159.739130434783,20.4854881266491"
+                    Point2="-163.739130434783,20.4854881266491"
+                    Point3="-163.739130434783,24.4854881266491" />
+                  <mssgle:LineSegment
+                    End="-163.739130434783,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-106.862924592391,25.4854881266491,49.98671875,10.3349609375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="162.782608695653,41.7391304347827"
+          Id="Package\Dimensão Produto\Comando OLE DB"
+          TopLeft="214.404347826087,412.456521739131" />
+        <EdgeLayout
+          Id="Package\Dimensão Produto.Paths[Saída de Atualizações de Membro Inferido]"
+          TopLeft="295.795652173913,352.456521739131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,60.0000000000001"
+              Start="0,0"
+              End="0,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-93.5976953125,20.1254882812501,187.195390625,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <NodeLayout
+          Size="171.965217391305,41.7391304347827"
+          Id="Package\Dimensão Produto\Comando OLE DB 1"
+          TopLeft="437.813043478261,412.456521739131" />
+        <EdgeLayout
+          Id="Package\Dimensão Produto.Paths[Saída de Atualizações de Atributo de Alteração]"
+          TopLeft="348.05652173913,352.456521739131">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="175.739130434783,60.0000000000001"
+              Start="0,0"
+              End="175.739130434783,52.5000000000001">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,16.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,16.4854881266491"
+                    Point2="0,20.4854881266491"
+                    Point3="4,20.4854881266491" />
+                  <mssgle:LineSegment
+                    End="171.739130434783,20.4854881266491" />
+                  <mssgle:CubicBezierSegment
+                    Point1="171.739130434783,20.4854881266491"
+                    Point2="175.739130434783,20.4854881266491"
+                    Point3="175.739130434783,24.4854881266491" />
+                  <mssgle:LineSegment
+                    End="175.739130434783,52.5000000000001" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="-15.4931300951087,25.4854881266491,206.725390625,12.2490234375"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensão Produto\Conexão Produtos">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <PipelineComponentMetadata
+    design-time-name="Package\Dimensão Produto\Dimensão de Alteração Lenta">
+    <Properties>
+      <Property>
+        <Name>SCDMetadata</Name>
+        <Value
+          type="q2:string">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SCDWizardMetadata xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionID&gt;{A80C4951-88D4-46C1-BAE2-AC5980F59E7C}&lt;/ConnectionID&gt;
+  &lt;TableName&gt;[dbo].[Dimensao_Produto]&lt;/TableName&gt;
+  &lt;InputToColumnsCollection&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Atr_Cor]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Atr_Cor&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Atr_Tamanho]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Atr_Tamanho&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Desc_Marca]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Marca&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Desc_Produto]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Desc_Produto&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Id_Marca]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Id_Marca&lt;/ColumnName&gt;
+      &lt;KeyType&gt;None&lt;/KeyType&gt;
+      &lt;ChangeType&gt;ChangingAttribute&lt;/ChangeType&gt;
+    &lt;/InputColumnToDBColumn&gt;
+    &lt;InputColumnToDBColumn&gt;
+      &lt;IdentificationString&gt;Conversão de Dados.Saídas[Saída de Conversão de Dados].Colunas[Id_Produto]&lt;/IdentificationString&gt;
+      &lt;ColumnName&gt;Id_Produto&lt;/ColumnName&gt;
+      &lt;KeyType&gt;BusinessKey&lt;/KeyType&gt;
+      &lt;ChangeType&gt;None&lt;/ChangeType&gt;
     &lt;/InputColumnToDBColumn&gt;
   &lt;/InputToColumnsCollection&gt;
   &lt;GeneratedComponentsIdentificationStrings&gt;
