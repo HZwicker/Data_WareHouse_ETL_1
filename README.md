@@ -11,3 +11,6 @@ Necessário estar instalado :
 3 - Microsoft SQL Server Management Studio
 
 4 - Microsoft SQL Server Data Tools
+
+
+# Continuacão no repositório Data_WareHouse_ETL_2 com a construção de bases de consultas utilizando o banco de dados do tipo OLAP.
